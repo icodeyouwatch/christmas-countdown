@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Playpen+Sans:wght@700&display=swap');
+
+:root {
+    --white         : #FFFFFF;
+    --red           : #FD563A;
+    --dark-red      : #B93D46;
+    --dark-blue     : #14313E;
+    --grey          : #D8D8DF;
+    --orange        : #fdb254;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing : border-box;
+    box-sizing         : border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: var( --dark-blue );
+    display: flex;
+    flex-direction: column;
+
+    &:before {
+        content: '';
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+        background: hsla(0, 0%, 0%, 1);
+        background: linear-gradient(-90deg, hsla(0, 0%, 0%, 1) 10%, hsla(0, 0%, 0%, 0) 100%);
+        background: -moz-linear-gradient(-90deg, hsla(0, 0%, 0%, 1) 10%, hsla(0, 0%, 0%, 0) 100%);
+        background: -webkit-linear-gradient(-90deg, hsla(0, 0%, 0%, 1) 10%, hsla(0, 0%, 0%, 0) 100%);
+        pointer-events: none;
+    }
+    &:after {
+        content: '';
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 48vh;
+        background-image: url( 'snowing.jpg' );
+        background-size: 750px;
+        pointer-events: none;
+        mix-blend-mode: lighten;
+        opacity: 0.3
+    }
+    > .container {
+        margin: 24px;
+        border: 2px solid var( --orange );
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        border-radius: 10px;
+
+        > .content {
+            position: relative;
+            z-index: 2;
+
+            > h2 {
+                font-family: 'Playpen Sans', cursive;
+                font-size: 100px;
+                text-align: center;
+                color: var( --white );
+            }
+            > h1 {
+                font-family: 'Lato', sans-serif;
+                text-align: center;
+                margin-bottom: 36px;
+                text-transform: uppercase;
+                font-size: 24px;
+                font-weight: 700;
+                color: var( --white );
+                letter-spacing: 3px;
+            }
+            > .countdown {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+
+                > div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 12px;
+                    background-color: var( --red );
+                    color: var( --white );
+                    padding: 36px;
+                    border-radius: 10px;
+                    width: 220px;
+                    height: 220px;
+
+                    > span {
+                        font-family: 'Playpen Sans', cursive;
+                        display: block;
+                        font-size: 100px;
+                        font-weight: 700;
+                        line-height: 140%;
+                    }
+                    > p {
+                        font-family: 'Lato', sans-serif;
+                        font-size: 24px;
+                        margin: 0;
+                        color: var( --dark-red );
+                    }
+                }
+            }
+        }
+    }
+    > a {
+        font-family: 'Lato', sans-serif;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        color: var( --orange );
+        background-color: var( --dark-blue );
+        width: fit-content;
+        margin: 0 auto 16px;
+        padding: 0 24px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+}
